@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner with Northeastern Co-op</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #f0f0f0; display: flex; justify-content: center; padding: 24px; }
+  .page { width: 816px; background: #fff; box-shadow: 0 4px 24px rgba(0,0,0,0.12); overflow: hidden; }
+
+  /* HEADER */
+  .header { background: #CC0000; color: #fff; padding: 28px 36px 22px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .header-left h1 { font-size: 22px; font-weight: 800; letter-spacing: -0.3px; line-height: 1.2; }
+  .header-left p { font-size: 12px; opacity: 0.85; margin-top: 4px; }
+  .header-right { text-align: right; font-size: 11px; opacity: 0.9; line-height: 1.6; }
+  .header-right strong { font-weight: 700; font-size: 12px; }
+
+  .body { padding: 28px 36px; }
+
+  .section-title { font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #CC0000; margin-bottom: 10px; padding-bottom: 4px; border-bottom: 1.5px solid #CC0000; }
+
+  /* VALUE STRIP */
+  .value-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+  .value-card { background: #fdf5f5; border-radius: 6px; padding: 14px; border-top: 3px solid #CC0000; }
+  .value-card .icon { font-size: 20px; margin-bottom: 6px; }
+  .value-card h3 { font-size: 12px; font-weight: 700; color: #111; margin-bottom: 4px; }
+  .value-card p { font-size: 10.5px; color: #444; line-height: 1.5; }
+
+  /* TWO COL */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+
+  /* COMPARE TABLE */
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 10.5px; margin-top: 2px; }
+  .compare-table th { background: #CC0000; color: #fff; font-weight: 600; padding: 6px 10px; text-align: left; font-size: 10px; }
+  .compare-table th:first-child { border-radius: 4px 0 0 0; }
+  .compare-table th:last-child { border-radius: 0 4px 0 0; }
+  .compare-table td { padding: 6px 10px; color: #333; line-height: 1.4; vertical-align: top; border-bottom: 1px solid #eee; }
+  .compare-table tr:nth-child(even) td { background: #fdf5f5; }
+  .compare-table td:first-child { font-weight: 500; color: #111; width: 38%; }
+
+  /* FUNDING */
+  .funding-card { background: #fff; border: 1.5px solid #e0e0e0; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+  .funding-card:last-child { margin-bottom: 0; }
+  .funding-badge { display: inline-block; background: #CC0000; color: #fff; font-size: 9px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; margin-bottom: 6px; }
+  .funding-badge.external { background: #1a3a6b; }
+  .funding-card h3 { font-size: 11.5px; font-weight: 700; color: #111; margin-bottom: 4px; }
+  .funding-card p { font-size: 10.5px; color: #444; line-height: 1.5; margin-bottom: 4px; }
+  .funding-card ul { padding-left: 14px; }
+  .funding-card li { font-size: 10.5px; color: #444; line-height: 1.5; margin-bottom: 2px; }
+  .funding-card li strong { color: #111; font-weight: 600; }
+  .funding-cta { display: inline-block; margin-top: 6px; font-size: 10px; font-weight: 600; color: #CC0000; text-decoration: none; }
+
+  /* PROCESS */
+  .process-section { margin-bottom: 24px; }
+  .steps { display: flex; gap: 0; margin-top: 2px; }
+  .step { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; }
+  .step:not(:last-child)::after { content: ''; position: absolute; top: 14px; right: -50%; width: 100%; height: 2px; background: #e0e0e0; z-index: 0; }
+  .step-num { width: 28px; height: 28px; border-radius: 50%; background: #CC0000; color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; z-index: 1; margin-bottom: 6px; }
+  .step p { font-size: 9.5px; color: #444; line-height: 1.4; padding: 0 4px; }
+
+  /* TESTIMONIALS */
+  .testimonials-section { margin-bottom: 24px; }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 2px; }
+  .testimonial-card {
+    background: #fafafa;
+    border: 1.5px dashed #ddd;
+    border-radius: 6px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100px;
+  }
+  .testimonial-card .quote-text {
+    font-size: 10.5px;
+    color: #888;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .testimonial-card .quote-text .placeholder-label {
+    display: block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #bbb;
+    margin-bottom: 4px;
+    font-style: normal;
+  }
+  .testimonial-card .attribution { font-size: 9.5px; color: #bbb; font-weight: 600; }
+  .testimonial-note { font-size: 9.5px; color: #aaa; font-style: italic; margin-top: 8px; text-align: center; }
+
+  /* FOOTER */
+  .bottom-strip { background: #1a1a1a; color: #fff; padding: 16px 36px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+  .bottom-item { text-align: center; flex: 1; }
+  .bottom-item .label { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; opacity: 0.6; margin-bottom: 3px; }
+  .bottom-item .val { font-size: 11px; font-weight: 600; color: #fff; }
+  .bottom-item .val a { color: #ff9999; text-decoration: none; }
+  .divider-v { width: 1px; background: rgba(255,255,255,0.15); height: 36px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <h1>Partner with Northeastern Co-op</h1>
+      <p>D'Amore-McKim School of Business · Cooperative Education</p>
+    </div>
+    <div class="header-right">
+      <strong>Tri-State Alumni Event</strong><br>
+      Northeastern University<br>
+      huskyco-op@northeastern.edu
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- VALUE PROPS -->
+    <div class="section-title">Why Hire a Co-op Student?</div>
+    <div class="value-strip">
+      <div class="value-card">
+        <div class="icon">🎯</div>
+        <h3>Pre-Vetted Talent Pipeline</h3>
+        <p>Access motivated, academically rigorous students from one of the nation's top co-op programs — at no recruiting fee.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">📅</div>
+        <h3>Flexible, Full-Time Commitment</h3>
+        <p>Students work 35–40 hrs/week for 4–6 months, giving you real project output — not a shadow or a short stint.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">🤝</div>
+        <h3>Ongoing University Support</h3>
+        <p>Dedicated co-op advisors manage logistics, handle academic credits, and support both you and the student throughout.</p>
+      </div>
+    </div>
+
+    <!-- CO-OP VS INTERNSHIP + FUNDING -->
+    <div class="two-col">
+      <div>
+        <div class="section-title">Co-op vs. Internship — What's the Difference?</div>
+        <table class="compare-table">
+          <thead>
+            <tr><th>Feature</th><th>Co-op</th><th>Internship</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Duration</td><td>4–6 months</td><td>Typically 8–12 wks</td></tr>
+            <tr><td>Hours</td><td>Full-time (35–40/wk)</td><td>Often part-time</td></tr>
+            <tr><td>Academic Credit</td><td>Registered through NU — we handle it</td><td>Varies; employer may need to coordinate</td></tr>
+            <tr><td>University Role</td><td>Active advisor support throughout</td><td>Minimal involvement</td></tr>
+            <tr><td>Employment Type</td><td>W2 employee of your org</td><td>W2 or stipend</td></tr>
+            <tr><td>Employer Effort</td><td>Post once, we manage recruiting</td><td>Managed independently</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:9.5px;color:#888;margin-top:6px;font-style:italic;">Questions? Visit our FAQ at <strong style="color:#CC0000;">[FAQ URL]</strong></p>
+      </div>
+
+      <div>
+        <div class="section-title">Spring 2026 Funding Opportunities</div>
+
+        <div class="funding-card">
+          <span class="funding-badge">Internal · Campus Partners</span>
+          <h3>Internally Funded Co-op Initiative</h3>
+          <p>The university will co-fund on-campus co-op roles to help departments hire first-time students in high-demand fields.</p>
+          <ul>
+            <li>Full-time roles in tech, AI, life sciences, or business</li>
+            <li>For <strong>first-time co-op seekers</strong> only</li>
+            <li>Proposal deadline: <strong>October 20</strong></li>
+          </ul>
+          <a class="funding-cta" href="#">Learn more & apply →</a>
+        </div>
+
+        <div class="funding-card">
+          <span class="funding-badge external">External · Employer Partners</span>
+          <h3>Co-op Partner On-Ramp Program</h3>
+          <p>Worried about the cost of onboarding a co-op student? We have resources to help make it work — even if your hiring budget is limited right now.</p>
+          <ul>
+            <li>Available to employers in high-demand sectors: FinTech, CS, Data Analytics, Digital Marketing, Life Sciences & more</li>
+            <li>Designed for organizations ready to commit to <strong>future co-op hiring</strong></li>
+            <li>Deadline: <strong>November 3</strong> · Decisions by <strong>November 10</strong></li>
+          </ul>
+          <a class="funding-cta" href="#">Talk to your co-op advisor to see if you qualify →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div class="process-section">
+      <div class="section-title">How It Works — From Interest to Hire</div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><p><strong>Connect with us</strong><br>Meet your co-op advisor & confirm eligibility</p></div>
+        <div class="step"><div class="step-num">2</div><p><strong>Submit a proposal</strong><br>Short form — we'll guide you through it</p></div>
+        <div class="step"><div class="step-num">3</div><p><strong>We post & recruit</strong><br>Central Co-op manages the posting & pipeline</p></div>
+        <div class="step"><div class="step-num">4</div><p><strong>Interview & hire</strong><br>You select your student; we handle logistics</p></div>
+        <div class="step"><div class="step-num">5</div><p><strong>Co-op begins</strong><br>Advisor check-ins throughout the term</p></div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <div class="testimonials-section">
+      <div class="section-title">What Employers Are Saying</div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="quote-text">
+            <span class="placeholder-label">📌 Placeholder — Employer Testimonial</span>
+            "Insert quote from employer partner here — e.g. impact of the co-op student, ease of the process, or likelihood to hire again."
+          </div>
+          <div class="attribution">— [Name, Title, Company]</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-text">
+            <span class="placeholder-label">📌 Placeholder — Employer Testimonial</span>
+            "Insert second employer quote here — ideally from a different industry to show range."
+          </div>
+          <div class="attribution">— [Name, Title, Company]</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-text">
+            <span class="placeholder-label">📌 Placeholder — Employer Testimonial</span>
+            "Insert third quote here — could be an alum who hired a Northeastern co-op for extra resonance with this audience."
+          </div>
+          <div class="attribution">— [Name, Title, Company]</div>
+        </div>
+      </div>
+      <p class="testimonial-note">Reach out to your co-op coordinator for verified testimonials from employer partners.</p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="bottom-strip">
+    <div class="bottom-item">
+      <div class="label">Learn More</div>
+      <div class="val"><a href="#">[Employer FAQ URL]</a></div>
+    </div>
+    <div class="divider-v"></div>
+    <div class="bottom-item">
+      <div class="label">Funding Details & Forms</div>
+      <div class="val"><a href="#">[SharePoint URL]</a></div>
+    </div>
+    <div class="divider-v"></div>
+    <div class="bottom-item">
+      <div class="label">Contact Us</div>
+      <div class="val">huskyco-op@northeastern.edu</div>
+    </div>
+    <div class="divider-v"></div>
+    <div class="bottom-item">
+      <div class="label">Cost to Recruit</div>
+      <div class="val">No recruiting fee</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
